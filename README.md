@@ -61,7 +61,7 @@ If you are using Docker, start the HAPI FHIR server with the following command:
 ### 4. Post Data to the HAPI FHIR Server
 To simulate patient data, use Postman to post the following data to the HAPI FHIR server:
 
-## Step 1: Post a Patient Resource
+#### Step 1: Post a Patient Resource
 ```json
 {
   "resourceType": "Patient",
@@ -87,7 +87,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-## Step 2: Post a MedicationRequest Resource
+#### Step 2: Post a MedicationRequest Resource
 ```json
 {
   "resourceType": "MedicationRequest",
@@ -110,7 +110,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-## Step 3: Post a CarePlan Resource
+#### Step 3: Post a CarePlan Resource
 ```json
 {
   "resourceType": "CarePlan",
@@ -143,7 +143,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-## Step 4: Post a Condition Resource
+#### Step 4: Post a Condition Resource
 ```json
 {
   "resourceType": "Condition",
@@ -181,7 +181,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   "recordedDate": "2023-06-05T00:00:00Z"
 }
 ```
-## Step 5: Post an Observation Resource
+#### Step 5: Post an Observation Resource
 ```json
 {
   "resourceType": "Observation",
@@ -218,7 +218,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   }
 }
 ```
-## Step 6: Post an Encounter Resource
+#### Step 6: Post an Encounter Resource
 ```json
 {
   "resourceType": "Encounter",
@@ -248,7 +248,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-## Step 7: Post an Practitioner Resource
+#### Step 7: Post an Practitioner Resource
 ```json
 {
   "resourceType": "Practitioner",
@@ -269,7 +269,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-## Step 8: Post an Organization Resource
+#### Step 8: Post an Organization Resource
 ```json
 {
   "resourceType": "Organization",
