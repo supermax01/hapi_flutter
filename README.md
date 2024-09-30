@@ -47,8 +47,7 @@ This project connects to a locally running HAPI FHIR server (hosted at `http://l
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/patient-fhir-viewer.git
-cd patient-fhir-viewer
+https://github.com/supermax01/hapi_flutter.git
 ```
 
 ### 2. Install Flutter Dependencies
