@@ -1,6 +1,6 @@
-# Hapi_FHIR - Flutter Application
+# Carepal Hapi_FHIR - Flutter Application
 
-Hapi_FHIR is a cross-platform Flutter app that demonstrates how to connect to a local HAPI FHIR server and display patient data using the Patient/$everything operation. This app fetches and displays FHIR resources such as Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Organization, and Practitioner.
+Carepal Hapi_FHIR is a cross-platform Flutter app that demonstrates how to connect to a local HAPI FHIR server and display patient data using the Patient/$everything operation. This app fetches and displays FHIR resources such as Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Organization, and Practitioner.
 
 ## Part of the Carepal App
 
