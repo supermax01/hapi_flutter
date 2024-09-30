@@ -8,15 +8,6 @@ This app serves as a technical demonstration for the upcoming Carepal app, curre
 
 #### Screenshots of the in development carepal app
 
-Screenshot 2024-09-30 at 5.17.53 PM
-Screenshot 2024-09-30 at 5.18.06 PM
-Screenshot 2024-09-30 at 5.18.17 PM
-Screenshot 2024-09-30 at 5.18.28 PM
-Screenshot 2024-09-30 at 5.18.48 PM
-Screenshot 2024-09-30 at 5.19.07 PM
-Screenshot 2024-09-30 at 5.19.23 PM
-Screenshot 2024-09-30 at 5.19.39 PM
-
 you can see and interact with the Carepal app's design here - https://www.figma.com/design/C8qwpsz1SIwJQVWTUX5ENF/CarePal-App?node-id=285-257&t=WM2pULc0tpSgLquc-1
 
 
