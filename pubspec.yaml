@@ -1,0 +1,30 @@
+name: hapi_flutter
+description: >
+  A FHIR-based Flutter app that fetches and displays patient information
+  from a HAPI FHIR server, showcasing FHIR integration in Flutter.
+
+# Prevents accidental publication to pub.dev. Remove or set to 'https://pub.dev' to publish.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0' # Compatible with Dart versions between 3.4.4 and 4.0.0.
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2 # Updated to a more recent stable version compatible with Flutter.
+  cupertino_icons: ^1.0.6 # iOS-styled icons for Cupertino widgets.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0 # Standard lints to encourage best practices.
+
+flutter:
+  uses-material-design: true
+
+  # Assets section for including image resources.
+  assets:
+    - assets/images/hapi_fhir_banner.png # Ensure the path is correct and matches your project structure.
