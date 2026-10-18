@@ -1,77 +1,69 @@
-# Carepal Hapi_FHIR - Flutter Application
+# hapi_flutter — FHIR `Patient/$everything` in Flutter, against a HAPI FHIR server
 
-Carepal Hapi_FHIR is a cross-platform Flutter app that demonstrates how to connect to a local HAPI FHIR server and display patient data using the Patient/$everything operation. This app fetches and displays FHIR resources such as Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Organization, and Practitioner.
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![HAPI FHIR](https://img.shields.io/badge/HAPI%20FHIR-server-E8542E)](https://hapifhir.io)
+[![HL7 FHIR R4](https://img.shields.io/badge/HL7%20FHIR-R4-E8542E)](https://hl7.org/fhir/R4/)
+[![Docker](https://img.shields.io/badge/Docker-hapiproject%2Fhapi-2496ED?logo=docker&logoColor=white)](https://hub.docker.com/r/hapiproject/hapi)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Part of the Carepal App
+> **Status:** 2024 technical demo for the [Carepal](https://github.com/supermax01/Carepal) project. It shows the
+> end-to-end path from a FHIR server to typed Dart models and a patient summary screen. Not for clinical use.
 
-This app serves as a technical demonstration for the upcoming Carepal app, currently in development. Carepal will use FHIR integration to enhance patient care and management and much more.
+## What it demonstrates
 
-#### Screenshots of the in development carepal app
-
-![alt text](<Screenshot 2024-09-30 at 5.17.53 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.18.06 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.18.17 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.18.28 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.18.48 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.19.07 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.19.23 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.19.39 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.19.55 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.20.08 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.20.22 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.20.35 PM.png>) ![alt text](<Screenshot 2024-09-30 at 5.20.53 PM.png>)
-
-you can see and interact with the Carepal app's design here - https://www.figma.com/design/C8qwpsz1SIwJQVWTUX5ENF/CarePal-App?node-id=285-257&t=WM2pULc0tpSgLquc-1
-
-
-## Project Overview
-
-This project connects to a locally running HAPI FHIR server (hosted at `http://localhost:8080`) and fetches the following FHIR resources for a patient:
-
-- **Patient**
-- **MedicationRequest**
-- **CarePlan**
-- **Condition**
-- **Observation**
-- **Encounter**
-- **Organization**
-- **Practitioner**
-
-### Data Displayed:
-
-- **Patient Details**: Name, Gender, Birth Date
-- **Medications**: Medication information, dosage instructions
-- **Care Plans**: Care plans and their details
-- **Conditions**: Active conditions related to the patient (e.g., Liver Cirrhosis)
-- **Observations**: Laboratory observations (e.g., Serum Bilirubin levels)
-- **Encounters**: Information about encounters (e.g., visits, encounters)
-- **Organization**: Details about the healthcare organization
-- **Practitioner**: Information about the practitioner assigned to the patient
-
-## Requirements
-
-- **Flutter SDK**: Install from [Flutter SDK Installation](https://flutter.dev/docs/get-started/install)
-- **HAPI FHIR Server**: A locally running HAPI FHIR server. You can download and run it by following the instructions from the official HAPI FHIR website: [HAPI FHIR Docker](https://hub.docker.com/r/hapiproject/hapi).
+- A single `GET /fhir/Patient/{id}/$everything` call returns a FHIR `Bundle`; the app parses it into typed models
+  (`lib/models/`) for **Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Organization,
+  Practitioner** and renders a patient summary: demographics, medications and dosage instructions, care plan,
+  active conditions (e.g. liver cirrhosis), lab observations (e.g. serum bilirubin), encounters, organization,
+  practitioner.
+- The sample data uses standard terminologies: SNOMED CT for conditions and care-plan activities, LOINC for
+  observations, UCUM for units.
 
 ## Screenshots
 
-![alt text](hapi_fhir_ios.png)
-![alt text](Hapi_Fhir_android.png)
+| iOS | Android |
+|---|---|
+| <img src="docs/screenshots/hapi_fhir_ios.png" width="320" alt="iOS"> | <img src="docs/screenshots/hapi_fhir_android.png" width="320" alt="Android"> |
 
+<details>
+<summary>Carepal app design walkthrough (13 screens)</summary>
+<br>
 
-## Setup Instructions
+<img src="docs/screenshots/carepal-design-01.png" width="180" alt="Carepal design screen 1">
+<img src="docs/screenshots/carepal-design-02.png" width="180" alt="Carepal design screen 2">
+<img src="docs/screenshots/carepal-design-03.png" width="180" alt="Carepal design screen 3">
+<img src="docs/screenshots/carepal-design-04.png" width="180" alt="Carepal design screen 4">
+<img src="docs/screenshots/carepal-design-05.png" width="180" alt="Carepal design screen 5">
+<img src="docs/screenshots/carepal-design-06.png" width="180" alt="Carepal design screen 6">
+<img src="docs/screenshots/carepal-design-07.png" width="180" alt="Carepal design screen 7">
+<img src="docs/screenshots/carepal-design-08.png" width="180" alt="Carepal design screen 8">
+<img src="docs/screenshots/carepal-design-09.png" width="180" alt="Carepal design screen 9">
+<img src="docs/screenshots/carepal-design-10.png" width="180" alt="Carepal design screen 10">
+<img src="docs/screenshots/carepal-design-11.png" width="180" alt="Carepal design screen 11">
+<img src="docs/screenshots/carepal-design-12.png" width="180" alt="Carepal design screen 12">
+<img src="docs/screenshots/carepal-design-13.png" width="180" alt="Carepal design screen 13">
 
-### 1. Clone the Repository
+Interactive design on Figma:
+https://www.figma.com/design/C8qwpsz1SIwJQVWTUX5ENF/CarePal-App?node-id=285-257&t=WM2pULc0tpSgLquc-1
+</details>
+
+## Run it
+
+**1. Start a HAPI FHIR server** (Docker):
 
 ```bash
-https://github.com/supermax01/hapi_flutter.git
+docker run -p 8080:8080 hapiproject/hapi:latest
+# FHIR base URL: http://localhost:8080/fhir
 ```
 
-### 2. Install Flutter Dependencies
+**2. Load the sample patient.** POST the resources below to `http://localhost:8080/fhir/<ResourceType>` with
+Postman or `curl -X POST -H "Content-Type: application/fhir+json" -d @file.json`. Post `Patient`, `Practitioner`,
+and `Organization` first so the references resolve.
 
-```bash
-flutter pub get
-```
+<details>
+<summary>Sample FHIR resources (Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Practitioner, Organization)</summary>
 
-### 3. Setup HAPI FHIR Server
-If you are using Docker, start the HAPI FHIR server with the following command:
-
-```bash
-If you are using Docker, start the HAPI FHIR server with the following command:
-```
-### 4. Post Data to the HAPI FHIR Server
-To simulate patient data, use Postman to post the following data to the HAPI FHIR server:
-
-#### Step 1: Post a Patient Resource
+**Step 1: Post a Patient Resource**
 ```json
 {
   "resourceType": "Patient",
@@ -97,7 +89,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-#### Step 2: Post a MedicationRequest Resource
+**Step 2: Post a MedicationRequest Resource**
 ```json
 {
   "resourceType": "MedicationRequest",
@@ -120,7 +112,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-#### Step 3: Post a CarePlan Resource
+**Step 3: Post a CarePlan Resource**
 ```json
 {
   "resourceType": "CarePlan",
@@ -153,7 +145,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-#### Step 4: Post a Condition Resource
+**Step 4: Post a Condition Resource**
 ```json
 {
   "resourceType": "Condition",
@@ -191,7 +183,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   "recordedDate": "2023-06-05T00:00:00Z"
 }
 ```
-#### Step 5: Post an Observation Resource
+**Step 5: Post an Observation Resource**
 ```json
 {
   "resourceType": "Observation",
@@ -228,7 +220,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   }
 }
 ```
-#### Step 6: Post an Encounter Resource
+**Step 6: Post an Encounter Resource**
 ```json
 {
   "resourceType": "Encounter",
@@ -258,7 +250,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-#### Step 7: Post an Practitioner Resource
+**Step 7: Post an Practitioner Resource**
 ```json
 {
   "resourceType": "Practitioner",
@@ -279,7 +271,7 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-#### Step 8: Post an Organization Resource
+**Step 8: Post an Organization Resource**
 ```json
 {
   "resourceType": "Organization",
@@ -296,19 +288,40 @@ To simulate patient data, use Postman to post the following data to the HAPI FHI
   ]
 }
 ```
-### 5. Fetch Data Using the Flutter Application
 
-Once the data is posted, the Flutter app fetches the patient’s data using the Patient/$everything operation. This operation retrieves all related resources (such as Patient, MedicationRequest, CarePlan, Condition, Observation, Encounter, Organization, and Practitioner) and displays them in the app.
+</details>
 
-The app uses HTTP GET requests to retrieve this data and presents it in a structured way.
-
-### 6. Run the Flutter Application
+**3. Run the app:**
 
 ```bash
+flutter pub get
 flutter run
 ```
-### 7. Technologies Used
-	•	Flutter: For building the mobile application.
-	•	HAPI FHIR: As the FHIR server backend.
-	•	Postman: For posting sample FHIR data to the server.
-	•	Docker: Used to host the HAPI FHIR server locally for development.
+
+The app calls `Patient/7/$everything`, parses the returned bundle, and displays each resource type in its own section.
+
+## Project layout
+
+```
+lib/
+├── main.dart                 # fetch + render the $everything bundle
+└── models/                   # typed FHIR resource models
+    ├── fhir_types.dart
+    ├── patient.dart
+    ├── medication_request.dart
+    ├── medication.dart
+    ├── care_plan.dart
+    ├── condition.dart
+    ├── observation.dart
+    ├── encounter.dart
+    ├── organization.dart
+    └── practitioner.dart
+```
+
+## Stack
+
+Flutter · HAPI FHIR (Docker) · HL7 FHIR R4 · SNOMED CT / LOINC / UCUM
+
+## License
+
+MIT — see [LICENSE](LICENSE).

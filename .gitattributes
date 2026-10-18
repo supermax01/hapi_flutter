@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
 * text=auto
+# Keep GitHub language stats focused on the Dart app code
+android/** linguist-vendored
+ios/** linguist-vendored
+*.png binary
